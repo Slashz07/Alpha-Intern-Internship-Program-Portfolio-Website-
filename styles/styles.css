@@ -59,14 +59,17 @@ section{
 .sec1{
   display: none;
   transform: translateY(0) scale(1);
+  background-color: red;
 }
 .sec2{
   display: none;
   transform: translateY(0) scale(1);
+  background-color: black;
 }
 .sec3{
   display: none;
   transform: translateY(0) scale(1);
+  background-color: blue;
 }
 .sec4{
   display: none;
@@ -77,6 +80,19 @@ section{
   transform: translateY(0) scale(1);
 }
 
+.active{
+  display: block;
+  animation: pageAppear 1s ease-in-out;
+ 
+}
+ @keyframes pageAppear {
+    0%{
+      transform: translateY(-100%) scaleY(0);
+    }
+    100%{
+      transform: translate(0) scaleY(1);
+    }
+  }
 .controls{
   display: flex;
   flex-direction: column;
@@ -84,6 +100,14 @@ section{
   right: 3%;
   top: 50%;
   transform: translateY(-50%);
+
+  .active-button{
+    background-color: var(--color-secondary) !important;
+    transition: all .4s ease-in-out;
+    i{
+      color: var(--color-white) !important;
+    }
+  }
 
   .control{
       height: 55px;
