@@ -1,7 +1,7 @@
 const sections=document.querySelectorAll('.section')
 const btnBox=document.querySelectorAll('.controls')
 const secBtns = document.querySelectorAll('.control')
-const allSections = document.querySelectorAll('.all')
+const allSections = document.querySelectorAll('body')
 
 function pageTransition() {
   for (i = 0; i < secBtns.length; i++){
@@ -15,15 +15,10 @@ function pageTransition() {
   allSections[0].addEventListener('click', (e) => {
     const id = e.target.dataset.id;
     if (id) {
-      btnBox.forEach((btn) => {
-        btn.classList.remove('active')
-      })
-      e.target.classList.add('active');
-
-      sections.forEach((section) => {
-        section.classList.remove('active');
-      })
+      let currentPage = document.querySelector('.active');
+      currentPage.classList.remove('active');
       const element = document.getElementById(id);
+      console.log(element);
       element.classList.add('active')
     }
 
