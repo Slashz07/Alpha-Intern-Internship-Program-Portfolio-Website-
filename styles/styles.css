@@ -47,7 +47,7 @@ section{
   position: absolute;
   top: 0;
   left: 0;
-  padding: 3rem 18rem;
+  padding: 3rem 12rem;
 }
 
 .section{
@@ -179,7 +179,110 @@ section{
   margin: 1.5rem 0;
   line-height: 2rem;
 }
-.header-content .rightHeader .btn-container {
+
+#about .title{
+    text-align: center;
+    width: 60%;
+    margin: auto;
+  }
+  #about .title h2{
+    text-transform: uppercase;
+    font-size: 2.3rem;
+    font-weight: 700;
+    position: relative;
+    padding: 1rem;
+  }
+  #about .title h2 span{
+   color: var(--color-secondary);
+  }
+ #about .title h2 .bg-text {
+  z-index: -1;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  font-weight: 800;
+  font-size: 4rem;
+  color: var(--color-grey-5);
+ }
+
+.about-container{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  padding-top: 3.5rem;
+  padding-bottom: 5rem;
+  grid-gap: 1rem;
+}
+ .about-container .left-about{
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+ }
+ .left-about h4{
+  font-size: 2rem;
+  text-transform: uppercase;
+ }
+ .left-about p{
+  line-height: 2rem;
+  color: var(--color-grey-1);
+ }
+ .about-container .right-about{
+  display: grid;
+  /* display: -moz-inline-grid; */
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 2rem;
+  padding-top: 1rem;
+ }
+ .about-container .right-about .about-item{
+  border: 1px solid var(--color-grey-5);
+  border-radius: 5px;
+  box-shadow: 1px 2px 15px rgba(0,0,0,0.1);
+  transition: all .4s ease-in-out;
+ }
+ .about-container .right-about .about-item:hover{
+  transform: translateY(-5px);
+  border: 1px solid var(--color-secondary);
+  box-shadow: 1px 4px 15px rgba(0,0,0,0.32);
+ }
+ .about-container .right-about {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 2rem;
+  height: 20rem;
+}
+
+.right-about .about-item .about-text{
+  display: flex;
+  flex-direction: column;
+  padding: 1.2rem;
+}
+ .about-item .about-text .statHead{
+font-size: 2.5rem;
+font-weight: 700;
+color: var(--color-secondary);
+}
+ .about-item .about-text .statBody{
+  padding-left: 3rem;
+  position: relative;
+  text-transform: uppercase;
+  font-size: 0.8rem;
+  color: var(--color-grey-1);
+  letter-spacing: 2px;
+}
+
+  .statBody::before{
+    content: '';
+    position: absolute;
+    top: 15px;
+    left: 0;
+    width: 2rem;
+    height: 2px;
+    background-color: var(--color-grey-5);
+}
+
+
+
+ .btn-container {
   align-self: flex-start;
 }
 .btn-container .main-btn{
@@ -190,7 +293,7 @@ section{
   display: flex;
   align-items: center;
   position: relative; 
-  
+overflow: hidden;
 }
 .btn-container .main-btn .btn-text{
   padding: 0 2rem;
@@ -205,11 +308,11 @@ section{
 }
 .main-btn::before{
   content:'';
-  position: absolute;
+  position: absolute;/* making position absolute allows me to take the virtual element out of document flow  and ajust its positioning without disturbing other child elements of the .main-btn  */
   top: 0;
   right: 0;
   transform: translateX(100%);
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
   z-index: -1;
 }
 .main-btn:hover::before{
@@ -218,6 +321,64 @@ section{
   background-color: var(--color-secondary);
   transform: translateX(0);
   border-radius: 30px;
-  transition: all 0.4s ease-in-out;
+  transition: all 0.6s ease-in-out;
 
+  }
+ 
+.about-stats{
+  padding-bottom: 4rem;
+}
+.about-stats .progress-bars{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 2rem;
+}
+.progress-bars .progress-bar{
+  display: flex;
+  flex-direction: column;
+}
+.progress-bar .progress-title{
+  font-weight: 500;
+  text-transform: uppercase;
+}
+.progress-bar .progress-cont{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 1rem;
+}
+.progress-cont .prog-text{
+  color: var(--color-grey-2);
+}
+.progress-cont .progress{
+  flex: 1;
+  background-color: var(--color-grey-4);
+  height: 0.45rem;
+  position: relative;
+}
+
+.progress span{
+position: absolute;
+top: 0;
+left: 0;
+height: 100%;
+background-color: var(--color-secondary);
+}
+.progress span .html{
+  width: 80%;
+}
+.progress span .css{
+  width: 70%;
+}
+.progress span .js{
+  width: 60%;
+}
+.progress span .backend-dev{
+  width: 20%;
+}
+.progress span .c++{
+  width: 70%;
+}
+.progress span .python{
+  width:50%;
 }
