@@ -563,8 +563,8 @@ justify-content: center;
 }
 
 .blog-text h4{
-  font-size: 1.5rem;
-  margin-bottom: 0.7rem;
+  font-size: 1.2rem;
+  margin-bottom: 0.5rem;
   cursor: pointer;
   transition: all .3s ease-in-out;
 }
@@ -573,6 +573,42 @@ justify-content: center;
 }
 .blog-text p{
   color: var(--color-grey-2);
-  line-height: 2rem;
-  padding-bottom: 1rem;
+  line-height: 1.7rem;
+  padding-bottom: .7rem;
+}
+/* contacts */
+.contacts{
+  display: flex;
+  padding-top: 3rem;
+  gap: 3rem;
+}
+.contacts .left-contact{
+  flex: 3;
+}
+.contacts .right-contact{
+  flex: 4;
+}
+.right-contact .input-control{
+  margin: 1.5rem 0;
+}
+.right-contact .sibling-entries{
+  display: flex;
+  gap: 1rem;
+}
+.input-control input,textarea{
+  width: 100%;
+  border-radius: 30px;
+  font-weight: inherit;
+  font-size: inherit;
+  font-family: inherit;
+  padding: 0.8rem 1.1rem;
+  outline: none;
+  border: none;
+  background-color: var(--color-grey-5);
+  color: inherit;
+  resize: none;/* to avoid resizing of texxt area by user  */
+}
+.submit-btn{
+  display: flex;
+  justify-content: flex-start;
 }
