@@ -180,29 +180,29 @@ section{
   line-height: 2rem;
 }
 
-#about .title{
+ .title{
     text-align: center;
-    width: 60%;
+    width: 80%;
     margin: auto;
   }
-  #about .title h2{
+   .title h2{
     text-transform: uppercase;
-    font-size: 2.3rem;
+    font-size: 2.8rem;
     font-weight: 700;
     position: relative;
     padding: 1rem;
   }
-  #about .title h2 span{
+   .title h2 span{
    color: var(--color-secondary);
   }
- #about .title h2 .bg-text {
+ .title h2 .bg-text {
   z-index: -1;
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%,-50%);
   font-weight: 800;
-  font-size: 4rem;
+  font-size: 4.5rem;
   color: var(--color-grey-5);
  }
 
@@ -294,6 +294,7 @@ color: var(--color-secondary);
   align-items: center;
   position: relative; 
 overflow: hidden;
+
 }
 .btn-container .main-btn .btn-text{
   padding: 0 2rem;
@@ -305,6 +306,7 @@ overflow: hidden;
   background-color: var(--color-secondary);
   border-radius: 50%;
   padding: 1rem;
+  
 }
 .main-btn::before{
   content:'';
@@ -328,10 +330,26 @@ overflow: hidden;
 .about-stats{
   padding-bottom: 4rem;
 }
+ .stats-title{
+  font-size: 1.4rem;
+  text-align: center;
+  padding: 1.5rem 0;
+  text-transform: capitalize;
+  position: relative;
+}
+ .stats-title::before{
+ content: '';
+  position: absolute;
+  top: 0;
+  left: 15%;
+  height: 0.2rem;
+  width: 70%;
+  background-color: var(--color-grey-5);
+}
 .about-stats .progress-bars{
   display: grid;
   grid-template-columns: repeat(2,1fr);
-  grid-gap: 2rem;
+  grid-gap: 4rem;
 }
 .progress-bars .progress-bar{
   display: flex;
@@ -364,21 +382,197 @@ left: 0;
 height: 100%;
 background-color: var(--color-secondary);
 }
-.progress span .html{
+.progress .html{
   width: 80%;
 }
-.progress span .css{
+.progress .css{
   width: 70%;
 }
-.progress span .js{
-  width: 60%;
+.progress .js{
+  width: 75%;
 }
-.progress span .backend-dev{
+.progress .backend-dev{
   width: 20%;
 }
-.progress span .c++{
+.progress .cpp{
   width: 70%;
 }
-.progress span .python{
+.progress .python{
   width:50%;
+}
+
+/* timeline */
+.timeline-items{
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-gap: 4rem;
+  padding-bottom: 3rem;
+}
+.timeline-item{
+ position: relative;
+ padding-left: 3rem;
+ border-left: 1px var(--color-grey-5);
+}
+.timeline-item .t1-icon{
+ position: absolute;
+ left: -25px;
+ top: 0;
+ background-color: var(--color-secondary);
+ height: 50px;
+ width: 50px;
+ border-radius: 50%;
+display: flex;
+align-items: center;
+justify-content: center;
+}
+.t1-icon i{
+  font-size: 1.3rem;
+}
+.t1-duration{
+  padding: .2rem .6rem;
+  background-color: var(--color-grey-5);
+  border-radius: 15px;
+  display: inline-block;
+  font-size: .8rem;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+.timeline-item h5{
+  padding: 1rem 0;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  font-weight: 600;
+}
+.timeline-item span{
+  color: var(--color-grey-2);
+  font-size: 1rem;
+  font-weight: 500;
+}
+.timeline-item p{
+  color: var(--color-grey-2);
+}
+
+/* Portfolio Section */
+.port-text{
+  padding: 2rem 0;
+  text-align: center;
+}
+.portfolio-items{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 2rem;
+  margin-top: 3rem;
+}
+.portfolio-items .portfolio-item{
+  position: relative;
+}
+ .portfolio-item img{
+  width: 100%;
+  height: 250px;
+  object-fit: cover;
+  border-radius: 15px;
+}
+.hover-item{
+  height: 100%;
+  width: 100%;
+  background-color: var(--color-secondary);
+  position: absolute;
+  top: 0;
+  left: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  border-radius: 15px;
+  opacity: 0;
+  transform: scale(0);
+  transition: all .6s ease-in-out;
+}
+.portfolio-item:hover .hover-item{
+  opacity: 1;
+  transform: scale(1);
+  /* transition: all .6s ease-in-out; */
+}
+.hover-item h3{
+  font-size: 1.5rem;
+  color: var(--color-white);
+  margin-bottom: 1.5rem;
+}
+.icons{
+  display: flex;
+}
+.icon{
+  background-color: var(--color-primary);
+  height: 50px;
+  width: 50px;
+  border-radius:50%;
+  display: flex;
+  justify-content: center;
+  align-items: center; 
+  margin: 0 1rem;
+  cursor: pointer;
+  transition: all 0.4s ease-in-out;
+}
+.icon i{
+  font-size: 1.8rem;
+}
+.icon:hover{
+  background-color: var(--color-white);
+}
+.icon:hover i{
+  color: var(--color-primary);
+}
+/* Blog items */
+.blog-items{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-gap: 2rem;
+  margin-top: 2rem;
+}
+.blog-items .blog-item{
+  background-color: var(--color-grey-5);
+  border-radius: 5px;
+  position: relative;
+  box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.1);
+  transition: all 0.4s ease-in-out;
+}
+
+.blog-item:hover{
+  transform: translateY(-5px);
+  box-shadow:1px 1px 20px rgba(0, 0, 0, 0.3) ;
+}
+.blog-item:hover img{
+  filter: grayscale(0);
+  transform: scale(1.1);
+  box-shadow:1px 4px 15px rgba(0, 0, 0, 0.8) ; /*on translation it dgoes upward ,so i gave boxshadow more on y axis  */
+}
+.blog-item img{
+  filter: grayscale(100%);
+  width: 100%;
+  height: 280px;
+  transition: all 0.4s ease-in-out;
+  object-fit: cover;
+  border-top-left-radius: 5px;
+  border-top-right-radius: 5px;
+}
+
+.blog-text{
+  margin-top: -10px;
+  padding: 1.1rem;
+  border-top: 8px solid var(--color-secondary);
+}
+
+.blog-text h4{
+  font-size: 1.5rem;
+  margin-bottom: 0.7rem;
+  cursor: pointer;
+  transition: all .3s ease-in-out;
+}
+.blog-text h4:hover{
+  color: var(--color-secondary);
+}
+.blog-text p{
+  color: var(--color-grey-2);
+  line-height: 2rem;
+  padding-bottom: 1rem;
 }
