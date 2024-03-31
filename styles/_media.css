@@ -1,4 +1,98 @@
-@media screen and (max-width:600px) {
+
+@media screen and (max-width:1130px ) and (min-width:851px) {
+  section{
+  padding: 3rem 7rem;
+  padding-bottom: 6rem ;
+}
+
+  .header-content .leftHeader .h-shape{
+    width: 85%;
+  }
+  .header-content .leftHeader .image{
+    width: 75%;
+  }
+  .header-content .rightHeader {
+    padding-right: 7rem;
+  }
+  .theme-btn{
+  height: 50px;
+  width: 50px;
+}
+
+.contact-container .contacts{
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 6rem ;
+}
+}
+
+@media screen and (max-width:1040px ) {
+  section{
+  padding: 3rem 7rem;
+  padding-bottom: 6rem ;
+}
+.sec1{
+  padding: 4rem;
+}
+ .header-content{
+    grid-template-columns: 1fr;
+    padding-bottom: 6rem ;
+  }
+  .leftHeader .h-shape{
+    display: none;
+  }
+  .header-content .leftHeader .image {
+    margin: 0 auto;
+    width: 70%;
+  }
+
+   .header .rightHeader{
+    padding:1rem;
+    grid-row: 1;
+    padding-right: 8rem;
+  }
+
+  
+.section .about-container{
+  grid-template-columns: 1fr;
+}
+.portfolio-items{
+  grid-template-columns: repeat(2,1fr);
+}
+.blog-items{
+  grid-template-columns: repeat(2,1fr);
+}
+}
+
+
+@media screen and (max-width:850px) and (min-width:601px) {
+  .theme-btn{
+  height: 50px;
+  width: 50px;
+}
+
+section{
+  padding: 3rem 7rem;
+  padding-bottom: 6rem ;
+}
+.blog-items{
+  grid-template-columns: 1fr;
+}
+.contact-container .contacts{
+  flex-direction: column;
+  padding-top: 0;
+  padding-bottom: 6rem ;
+}
+  .right-contact .sibling-entries{
+  flex-direction: column;
+}
+}
+@media screen and (max-width:637px) {
+
+ .title h2 .bg-text {
+  display: none;
+ }
+
   .header-content{
     grid-template-columns: 1fr;
     padding-bottom: 6rem ;
@@ -37,8 +131,7 @@
 
 .section{
   padding: 3rem 2.5rem;
-    padding-bottom: 6rem ;
-
+  padding-bottom: 6rem ;
 }
 .section .about-container{
   grid-template-columns: 1fr;
@@ -56,15 +149,7 @@
 }
 
 /* Portfolio--> */
-.title{
-  width:100%;
-}
-.title h2  {
-  padding: 0;
-}
-.title h2 .bg-text {
-  display: none;
-}
+
 .portfolio-items{
   grid-template-columns: 1fr;
   padding: 0 2rem;
