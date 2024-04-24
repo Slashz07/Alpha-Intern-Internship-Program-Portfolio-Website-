@@ -452,16 +452,16 @@
               </div>
             </div>
             <br><br>
-             <div class="btn-container" id="contactBtn">
-               <a href="./assets/CV.pdf" download="./assets/CV.pdf" class="main-btn submit-btn">
-                 <span class="btn-text">Download CV</span>
-                 <span class="btn-icon"><i class="fas fa-download"></i></span>
-               </a>
+            <div class="btn-container" id="contactBtn">
+              <a href="./assets/CV.pdf" download="./assets/CV.pdf" class="main-btn submit-btn">
+                <span class="btn-text">Download CV</span>
+                <span class="btn-icon"><i class="fas fa-download"></i></span>
+              </a>
 
-             </div>
+            </div>
           </div>
           <div class="right-contact">
-            <form action="" class="contact-info">
+            <form action="" name="submit-to-google-sheet" class="contact-info">
               <div class="input-control sibling-entries">
                 <input type="text" name="Name" required placeholder="YOUR NAME">
                 <input type="text" name="Email" required placeholder="YOUR EMAIL">
@@ -474,8 +474,9 @@
               </div>
               <div class="submit-btn">
                 <input type="submit" value="Submit">
-                </div>
+              </div>
             </form>
+            <span id="submission"></span>
           </div>
         </div>
       </div>
@@ -513,8 +514,33 @@
   <div class="theme-btn">
     <i class="fas fa-adjust"></i>
   </div>
-  <script src="app.js"></script>
 
+  <script src="app.js"></script>
+  <script>
+    const scriptURL =
+      'https://script.google.com/macros/s/AKfycbxgzCV6DCn1NyuGdUhV40zTmZpub9-ozKHPQxoqhLJ8jskOvJkkj6mHC89P-KqxwOt_/exec'
+    const form = document.forms['submit-to-google-sheet']
+    const postSubmitMsg = document.getElementById("submission")
+    form.addEventListener('submit', e => {
+          e.preventDefault()
+          fetch(scriptURL, {
+              method: 'POST',
+              body: new FormData(form)
+            })
+            .then(response => {
+              postSubmitMsg.innerText="Message has been sent successfully!!"
+              setTimeout(() => {
+                postSubmitMsg.innerText=''
+              }, 5000);
+              form.reset()
+    })
+
+              .catch(error => (
+              postSubmitMsg.innerText="Message could not be delivered"
+
+              ))
+            })
+  </script>
 </body>
 
 </html>

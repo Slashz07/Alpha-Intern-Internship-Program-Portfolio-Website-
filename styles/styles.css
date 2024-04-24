@@ -818,3 +818,7 @@ textarea {
   transition: all .4s ease-in-out;
 
 }
+#submission{
+  font-size: 13px;
+  color: #61b752;
+}
